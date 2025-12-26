@@ -2,33 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* ===== Custom Neon Theme ===== */
 :root {
-  --neon-glow: 0 0 5px #00bfff, 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #8000ff, 0 0 40px #8000ff;
-}
-.neon-text {
-  text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff, 0 0 50px #00bfff;
-}
-.neon-border {
-  box-shadow: 0 0 5px rgba(0, 191, 255, 0.8), 0 0 10px rgba(0, 191, 255, 0.6), inset 0 0 5px rgba(0, 191, 255, 0.8), inset 0 0 10px rgba(0, 191, 255, 0.6);
-}
-.card-glow:hover {
-  box-shadow: 0 0 15px rgba(128, 0, 255, 0.6), 0 0 25px rgba(0, 191, 255, 0.4);
-}
-.glowing-icon {
-  filter: drop-shadow(0 0 8px #00bfff);
+  --neon-glow: 0 0 5px #00bfff, 0 0 10px #00bfff, 0 0 20px #00bfff, 
+               0 0 30px #8000ff, 0 0 40px #8000ff;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  @apply bg-gradient-to-br from-black via-[#121212] to-[#1a1a1a] text-white;
+  font-family: 'Space Grotesk', 'Noto Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Neon text */
+.neon-text {
+  text-shadow: 0 0 2px #fff, 0 0 5px #fff,
+               0 0 10px #00bfff, 0 0 20px #00bfff,
+               0 0 30px #00bfff, 0 0 40px #00bfff,
+               0 0 50px #00bfff;
+}
+
+/* Neon border */
+.neon-border {
+  box-shadow: 0 0 5px rgba(0, 191, 255, 0.8),
+              0 0 10px rgba(0, 191, 255, 0.6),
+              inset 0 0 5px rgba(0, 191, 255, 0.8),
+              inset 0 0 10px rgba(0, 191, 255, 0.6);
+}
+
+/* Card glow hover */
+.card-glow:hover {
+  box-shadow: 0 0 15px rgba(128, 0, 255, 0.6),
+              0 0 25px rgba(0, 191, 255, 0.4);
+}
+
+/* Icon glow */
+.glowing-icon {
+  filter: drop-shadow(0 0 8px #00bfff);
+}
+
+/* Optional: Chart tooltips */
+.recharts-tooltip-wrapper {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+}
+/* ===== Neon Button ===== */
+.btn-neon {
+  @apply px-4 py-2 rounded-lg font-semibold tracking-wide transition duration-300;
+  background: linear-gradient(135deg, #00bfff, #8000ff);
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.6), 0 0 20px rgba(128, 0, 255, 0.5);
+}
+.btn-neon:hover {
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.9), 0 0 30px rgba(128, 0, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+/* ===== Neon Input ===== */
+.input-neon {
+  @apply w-full rounded-lg px-3 py-2 bg-black/50 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#00bfff];
+  box-shadow: inset 0 0 5px rgba(0, 191, 255, 0.6);
+}
+
+/* ===== Neon Card ===== */
+.card-neon {
+  @apply rounded-xl p-6 transition duration-300;
+  background: linear-gradient(145deg, rgba(20, 20, 30, 0.95), rgba(30, 10, 40, 0.9));
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.4), 0 0 20px rgba(128, 0, 255, 0.3);
+}
+.card-neon:hover {
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.8), 0 0 40px rgba(128, 0, 255, 0.6);
 }
